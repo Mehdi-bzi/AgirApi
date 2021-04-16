@@ -2,9 +2,10 @@
 
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiResource;
-use App\Repository\FormationRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\FormationRepository;
+use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource()
@@ -26,11 +27,13 @@ class Formation
 
     /**
      * @ORM\Column(type="string", length=500, nullable=true)
+     * 
      */
     private $description;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * 
      */
     private $price;
 
