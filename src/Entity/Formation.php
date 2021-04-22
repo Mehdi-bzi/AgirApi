@@ -8,7 +8,8 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *     normalizationContext={"groups"={"formation:read"}},)
  * @ORM\Entity(repositoryClass=FormationRepository::class)
  */
 class Formation
@@ -17,33 +18,39 @@ class Formation
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"formation:read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"formation:read"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=500, nullable=true)
+     * @Groups({"formation:read"})
      * 
      */
     private $description;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"formation:read"})
      * 
      */
     private $price;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"formation:read"})
      */
     private $duration;
 
     /**
      * @ORM\ManyToOne(targetEntity=Theme::class, inversedBy="formation")
+     * @Groups({"formation:read"})
      */
     private $theme;
 

@@ -4,3 +4,9 @@
 authentication_token:
     path: /authentication_token
     methods: ['POST']
+
+
+get_user:
+    path: /authenticated
+    controller: App\Controller\AuthenController::getAgirUser
+    methods: ['GET']

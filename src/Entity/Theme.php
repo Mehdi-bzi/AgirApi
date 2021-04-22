@@ -20,16 +20,19 @@ class Theme
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"formation:read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"formation:read"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=1000, nullable=true)
+     * 
      * 
      */
     private $description;
