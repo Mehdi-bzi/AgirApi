@@ -9,7 +9,10 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
- *     normalizationContext={"groups"={"formation:read"}},)
+ *     attributes={"pagination_enabled"=false},
+ *     normalizationContext={"groups"={"formation:read"}},
+
+ * )
  * @ORM\Entity(repositoryClass=FormationRepository::class)
  */
 class Formation
